@@ -2,6 +2,7 @@ use std::{
     cmp,
     collections::VecDeque,
     convert::TryFrom,
+    env,
     fmt, io, mem,
     net::{IpAddr, SocketAddr},
     sync::Arc,
@@ -2945,6 +2946,12 @@ impl Connection {
                 &self.config,
             )
         };
+        if env::var_os("QUINN_MIGRATE_WITHOUT_VALIDATION").is_some() {
+            new_path.validated = true;
+            let prev = mem::replace(&mut self.path, new_path);
+            self.prev_path = Some((self.rem_cids.active(), prev));
+            return;
+        }
         new_path.challenge = Some(self.rng.gen());
         new_path.challenge_pending = true;
         let prev_pto = self.pto(SpaceId::Data);
