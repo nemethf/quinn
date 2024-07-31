@@ -1,3 +1,15 @@
+# About this fork
+
+This fork of the
+[quinn](https://github.com/quinn-rs/quinn)
+project contains work created as part of the
+[REQUIEM](https://bit.ly/tki-6gxr-requiem)
+[open-call](https://www.6g-xr.eu/open-calls/oc1-results/) of the
+[6G-XR](https://www.6g-xr.eu/) EU project.
+
+We have upstreamed most of our contributions.  This repository
+contains commits that not necessarily make sense upstream.
+
 <h1 align="center"><img width="500" src="https://raw.githubusercontent.com/quinn-rs/quinn/51a3cea225670757cb844a342428e4e1341d9f13/docs/thumbnail.svg" /></h1>
 
 [![Documentation](https://docs.rs/quinn/badge.svg)](https://docs.rs/quinn/)
